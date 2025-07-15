@@ -1,0 +1,6 @@
+bokeh
+geopandas
+minisom
+numpy
+pandas
+scikit‑learn
