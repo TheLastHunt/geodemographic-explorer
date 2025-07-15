@@ -1,0 +1,83 @@
+{% extends base %}
+
+{% block title %}
+  Geodemographic Explorer
+{% endblock %}
+
+{% block postamble %}
+  <style>
+    :root {
+      --base-font: Helvetica, Arial, sans-serif;
+      --bg-color: #e6e6e6;
+      --header-bg: #bbbbbb;
+      --header-color: #333;
+      --footer-bg: #bbbbbb;
+      --footer-color: #333;
+      --card-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    html, body {
+      margin: 0; padding: 0;
+      min-width: 100vw; height: 100vh;
+      font-family: var(--base-font);
+      background: var(--bg-color);
+      display: flex; flex-direction: column;
+    }
+    .page_wrapper {
+      display: flex; flex-direction: column;
+      flex: 1 0 auto;
+      margin: 0 auto;
+      width: auto;
+      max-width: 1600px;
+    }
+    .header_wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1em;
+      background: var(--header-bg);
+      color: var(--header-color);
+      box-shadow: var(--card-shadow);
+      border-radius: 0 0 0.5em 0.5em;
+    }
+    .main_wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1 0 auto;
+      padding: 1em;
+    }
+    .main_item {
+      flex: 1;
+      background: #fff;
+      padding: 1em;
+      box-shadow: var(--card-shadow);
+      border-radius: 0.5em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .footer_wrapper {
+      padding: 0.5em;
+      background: var(--footer-bg);
+      color: var(--footer-color);
+      text-align: center;
+      box-shadow: var(--card-shadow);
+      border-radius: 0.5em 0.5em 0 0;
+    }
+  </style>
+
+  <div class="page_wrapper">
+    <div class="header_wrapper">
+      <h1>SOM-Based Geodemographic Explorer</h1>
+    </div>
+    <div class="main_wrapper">
+      <div class="main_item">
+        {{ embed(roots.tabs) }}
+      </div>
+    </div>
+    <div class="footer_wrapper">
+      NOVA IMS
+    </div>
+  </div>
+{% endblock %}
